@@ -39,13 +39,13 @@ public class LeaderBoardQueryService {
 
     public int getPlayerRank(Long userId) {
 
-        // 1. Check Redis cache
+
         String cachedRank = redisCache.getUserRank(userId);
         if (cachedRank != null) {
             return Integer.parseInt(cachedRank);
         }
 
-        // 2. Run SQL
+
         String sql = """
         SELECT rank FROM (
             SELECT l.user_id,
@@ -66,7 +66,6 @@ public class LeaderBoardQueryService {
         Object result = query.getSingleResult();
         int rank = ((Number) result).intValue();
 
-        // 3. Cache it
         redisCache.cacheUserRank(userId, rank);
 
         return rank;

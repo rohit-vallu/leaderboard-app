@@ -45,7 +45,7 @@ A scalable, real-time gaming leaderboard system supporting:
     |    Redis Cache + Locking  |           |     PostgreSQL Database    |
     |  - leaderboard:top10      |           |  - users                   |
     |  - leaderboard:rank:<id>  |           |  - game_sessions           |
-    |  - lock:user:<id>         |           |  - leaderboard (totals)    |
+    |  - lock:<id>              |           |  - leaderboard (totals)    |
     +---------------------------+           +-----------------------------+
 
 ---
@@ -112,7 +112,7 @@ src/main/java/com/leaderboard
 
 ### 🔐 Redis Locking
 ```
-lock:user:<userId> → "locked" (TTL = 5 seconds)
+lock:<userId> → "locked" (TTL = 5 seconds)
 ```
 * Request A and B hit userId=10.
 * Only A acquires lock.
