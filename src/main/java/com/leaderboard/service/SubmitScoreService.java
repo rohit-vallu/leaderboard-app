@@ -29,7 +29,7 @@ public class SubmitScoreService {
     @Transactional
     public void submitScore(Long userId, int score) {
 
-        String lockKey = "lock:user:" + userId;
+        String lockKey = "lock:" + userId;
 
         if (!lockService.acquireLock(lockKey, LOCK_DURATION)) {
             throw new IllegalStateException("Concurrent update detected for user " + userId);
