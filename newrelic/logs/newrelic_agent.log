@@ -1,0 +1,75 @@
+2025-12-12T15:54:05,167+0530 [62306 1] com.newrelic INFO: Writing to New Relic log file: /Users/cb-it-01-1901/self_work/leaderboard-app/newrelic/logs/newrelic_agent.log
+2025-12-12T15:54:05,167+0530 [62306 1] com.newrelic INFO: JRE vendor Amazon.com Inc. version 17.0.5
+2025-12-12T15:54:05,168+0530 [62306 1] com.newrelic INFO: JVM vendor Amazon.com Inc. OpenJDK 64-Bit Server VM version 17.0.5+8-LTS
+2025-12-12T15:54:05,168+0530 [62306 1] com.newrelic INFO: OS Mac OS X version 14.7 arch x86_64
+2025-12-12T15:54:05,168+0530 [62306 1] com.newrelic INFO: Agent Host: CB-IT-01-1901s-MacBook-Pro.local IP: 127.0.0.1
+2025-12-12T15:54:05,168+0530 [62306 1] com.newrelic INFO: New Relic Agent v8.25.0 is initializing...
+2025-12-12T15:54:06,303+0530 [62306 22] com.newrelic INFO: Instrumentation com.newrelic.instrumentation.jdbc-resultset is disabled. Skipping.
+2025-12-12T15:54:09,609+0530 [62306 1] com.newrelic INFO: Started Adaptive Sampler with sampling target 120 and report period 60 seconds.
+2025-12-12T15:54:09,622+0530 [62306 1] com.newrelic.agent.RPMServiceManagerImpl INFO: Configured to connect to New Relic at collector.newrelic.com:443
+2025-12-12T15:54:10,066+0530 [62306 1] com.newrelic INFO: Setting audit_mode to false
+2025-12-12T15:54:10,287+0530 [62306 1] com.newrelic.agent.config.ConfigServiceImpl INFO: Configuration file is /Users/cb-it-01-1901/self_work/leaderboard-app/newrelic/./newrelic.yml
+2025-12-12T15:54:10,291+0530 [62306 1] com.newrelic INFO: New Relic Agent v8.25.0 has started
+2025-12-12T15:54:10,291+0530 [62306 1] com.newrelic INFO: Agent class loader: com.newrelic.bootstrap.BootstrapAgent$JVMAgentClassLoader@20fa23c1
+2025-12-12T15:54:10,293+0530 [62306 1] com.newrelic INFO: Premain startup complete in 6,158ms
+2025-12-12T15:54:10,295+0530 [62306 1] com.newrelic INFO: New Relic Security is completely disabled by one of the user provided config `security.enabled`, `security.agent.enabled` or `high_security`. Not loading security capabilities.
+2025-12-12T15:54:15,636+0530 [62323 1] com.newrelic INFO: Writing to New Relic log file: /Users/cb-it-01-1901/self_work/leaderboard-app/newrelic/logs/newrelic_agent.log
+2025-12-12T15:54:15,637+0530 [62323 1] com.newrelic INFO: JRE vendor Amazon.com Inc. version 17.0.5
+2025-12-12T15:54:15,637+0530 [62323 1] com.newrelic INFO: JVM vendor Amazon.com Inc. OpenJDK 64-Bit Server VM version 17.0.5+8-LTS
+2025-12-12T15:54:15,637+0530 [62323 1] com.newrelic INFO: OS Mac OS X version 14.7 arch x86_64
+2025-12-12T15:54:15,637+0530 [62323 1] com.newrelic INFO: Agent Host: CB-IT-01-1901s-MacBook-Pro.local IP: 127.0.0.1
+2025-12-12T15:54:15,637+0530 [62323 1] com.newrelic INFO: New Relic Agent v8.25.0 is initializing...
+2025-12-12T15:54:16,352+0530 [62323 22] com.newrelic INFO: Instrumentation com.newrelic.instrumentation.jdbc-resultset is disabled. Skipping.
+2025-12-12T15:54:17,529+0530 [62323 1] com.newrelic INFO: Started Adaptive Sampler with sampling target 120 and report period 60 seconds.
+2025-12-12T15:54:17,531+0530 [62323 1] com.newrelic.agent.RPMServiceManagerImpl INFO: Configured to connect to New Relic at collector.newrelic.com:443
+2025-12-12T15:54:17,834+0530 [62323 1] com.newrelic INFO: Setting audit_mode to false
+2025-12-12T15:54:17,949+0530 [62323 1] com.newrelic.agent.config.ConfigServiceImpl INFO: Configuration file is /Users/cb-it-01-1901/self_work/leaderboard-app/newrelic/./newrelic.yml
+2025-12-12T15:54:17,952+0530 [62323 1] com.newrelic INFO: New Relic Agent v8.25.0 has started
+2025-12-12T15:54:17,953+0530 [62323 1] com.newrelic INFO: Agent class loader: com.newrelic.bootstrap.BootstrapAgent$JVMAgentClassLoader@77afea7d
+2025-12-12T15:54:17,954+0530 [62323 1] com.newrelic INFO: Premain startup complete in 3,065ms
+2025-12-12T15:54:17,956+0530 [62323 1] com.newrelic INFO: New Relic Security is completely disabled by one of the user provided config `security.enabled`, `security.agent.enabled` or `high_security`. Not loading security capabilities.
+2025-12-12T15:54:21,641+0530 [62323 1] com.newrelic INFO: Server Info: Apache Tomcat/10.1.30
+2025-12-12T15:54:27,976+0530 [62323 40] com.newrelic INFO: Host name is CB-IT-01-1901s-MacBook-Pro.local, display host CB-IT-01-1901s-MacBook-Pro.local for application Leaderboard-App
+2025-12-12T15:54:27,984+0530 [62323 40] com.newrelic INFO: New Relic JFR Monitor is disabled: JFR config has not been enabled in the Java agent.
+2025-12-12T15:54:29,737+0530 [62323 40] com.newrelic INFO: Collector redirection to collector.newrelic.com:443
+2025-12-12T15:54:31,711+0530 [62323 40] com.newrelic INFO: Max payload size is 1,000,000 bytes
+2025-12-12T15:54:31,711+0530 [62323 40] com.newrelic INFO: Agent run id: Bd17ttukT1FaAHH2dlB3YvxpO-24AAIBAAAnIQEAAPNzAgRQd4JXAwAGOC4yNS4wACBDQi1JVC0wMS0xOTAxcy1NYWNCb29rLVByby5sb2NhbAAPTGVhZGVyYm9hcmQtQXBw
+2025-12-12T15:54:31,713+0530 [62323 40] com.newrelic INFO: Agent 62323@CB-IT-01-1901s-MacBook-Pro.local/Leaderboard-App connected to collector.newrelic.com:443
+2025-12-12T15:54:31,714+0530 [62323 40] com.newrelic INFO: Reporting to: https://rpm.newrelic.com/accounts/7468662/applications/1350009431
+2025-12-12T15:54:31,716+0530 [62323 40] com.newrelic INFO: Using default collector host: collector.newrelic.com
+2025-12-12T15:54:31,716+0530 [62323 40] com.newrelic INFO: Using default metric ingest URI: https://metric-api.newrelic.com/metric/v1
+2025-12-12T15:54:31,716+0530 [62323 40] com.newrelic INFO: Using default event ingest URI: https://insights-collector.newrelic.com/v1/accounts/events
+2025-12-12T15:54:31,717+0530 [62323 40] com.newrelic INFO: The root sampler was configured to use the adaptive sampler type.
+2025-12-12T15:54:31,717+0530 [62323 40] com.newrelic INFO: The remote_parent_sampled sampler was configured to use the adaptive sampler type.
+2025-12-12T15:54:31,717+0530 [62323 40] com.newrelic INFO: The remote_parent_not_sampled sampler was configured to use the adaptive sampler type.
+2025-12-12T15:54:31,718+0530 [62323 40] com.newrelic INFO: Using default collector host: collector.newrelic.com
+2025-12-12T15:54:31,718+0530 [62323 40] com.newrelic INFO: Using default metric ingest URI: https://metric-api.newrelic.com/metric/v1
+2025-12-12T15:54:31,718+0530 [62323 40] com.newrelic INFO: Using default event ingest URI: https://insights-collector.newrelic.com/v1/accounts/events
+2025-12-12T15:54:31,720+0530 [62323 40] com.newrelic INFO: The root sampler was configured to use the adaptive sampler type.
+2025-12-12T15:54:31,720+0530 [62323 40] com.newrelic INFO: The remote_parent_sampled sampler was configured to use the adaptive sampler type.
+2025-12-12T15:54:31,721+0530 [62323 40] com.newrelic INFO: The remote_parent_not_sampled sampler was configured to use the adaptive sampler type.
+2025-12-12T15:54:32,286+0530 [62323 40] com.newrelic INFO: Real user monitoring is enabled for application Leaderboard-App. Auto instrumentation is enabled.
+2025-12-12T15:54:32,287+0530 [62323 40] com.newrelic INFO: Updating shared Adaptive Sampler sampling target to 120
+2025-12-12T15:54:32,287+0530 [62323 40] com.newrelic INFO: New Relic JFR Monitor is disabled: JFR config has not been enabled in the Java agent.
+2025-12-12T15:56:10,315+0530 [62306 40] com.newrelic INFO: Host name is CB-IT-01-1901s-MacBook-Pro.local, display host CB-IT-01-1901s-MacBook-Pro.local for application Leaderboard-App
+2025-12-12T15:56:10,325+0530 [62306 40] com.newrelic INFO: New Relic JFR Monitor is disabled: JFR config has not been enabled in the Java agent.
+2025-12-12T15:56:12,385+0530 [62306 40] com.newrelic INFO: Collector redirection to collector.newrelic.com:443
+2025-12-12T15:56:13,067+0530 [62306 40] com.newrelic INFO: Max payload size is 1,000,000 bytes
+2025-12-12T15:56:13,067+0530 [62306 40] com.newrelic INFO: Agent run id: BT1b-lvVxKQgAHH2dlB3WABpO-4wAAIBAAAnIQEAAPNiAgRQd4JXAwAGOC4yNS4wACBDQi1JVC0wMS0xOTAxcy1NYWNCb29rLVByby5sb2NhbAAPTGVhZGVyYm9hcmQtQXBw
+2025-12-12T15:56:13,068+0530 [62306 40] com.newrelic INFO: Agent 62306@CB-IT-01-1901s-MacBook-Pro.local/Leaderboard-App connected to collector.newrelic.com:443
+2025-12-12T15:56:13,071+0530 [62306 40] com.newrelic INFO: Reporting to: https://rpm.newrelic.com/accounts/7468662/applications/1350009431
+2025-12-12T15:56:13,079+0530 [62306 40] com.newrelic INFO: Using default collector host: collector.newrelic.com
+2025-12-12T15:56:13,081+0530 [62306 40] com.newrelic INFO: Using default metric ingest URI: https://metric-api.newrelic.com/metric/v1
+2025-12-12T15:56:13,081+0530 [62306 40] com.newrelic INFO: Using default event ingest URI: https://insights-collector.newrelic.com/v1/accounts/events
+2025-12-12T15:56:13,084+0530 [62306 40] com.newrelic INFO: The root sampler was configured to use the adaptive sampler type.
+2025-12-12T15:56:13,085+0530 [62306 40] com.newrelic INFO: The remote_parent_sampled sampler was configured to use the adaptive sampler type.
+2025-12-12T15:56:13,085+0530 [62306 40] com.newrelic INFO: The remote_parent_not_sampled sampler was configured to use the adaptive sampler type.
+2025-12-12T15:56:13,090+0530 [62306 40] com.newrelic INFO: Using default collector host: collector.newrelic.com
+2025-12-12T15:56:13,090+0530 [62306 40] com.newrelic INFO: Using default metric ingest URI: https://metric-api.newrelic.com/metric/v1
+2025-12-12T15:56:13,090+0530 [62306 40] com.newrelic INFO: Using default event ingest URI: https://insights-collector.newrelic.com/v1/accounts/events
+2025-12-12T15:56:13,097+0530 [62306 40] com.newrelic INFO: The root sampler was configured to use the adaptive sampler type.
+2025-12-12T15:56:13,098+0530 [62306 40] com.newrelic INFO: The remote_parent_sampled sampler was configured to use the adaptive sampler type.
+2025-12-12T15:56:13,098+0530 [62306 40] com.newrelic INFO: The remote_parent_not_sampled sampler was configured to use the adaptive sampler type.
+2025-12-12T15:56:13,132+0530 [62306 40] com.newrelic INFO: Real user monitoring is enabled for application Leaderboard-App. Auto instrumentation is enabled.
+2025-12-12T15:56:13,133+0530 [62306 40] com.newrelic INFO: Updating shared Adaptive Sampler sampling target to 120
+2025-12-12T15:56:13,134+0530 [62306 40] com.newrelic INFO: New Relic JFR Monitor is disabled: JFR config has not been enabled in the Java agent.

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Leaderboard</title>
+
+    <style>
+        body {
+            background: #f4f6fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 15px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        thead th {
+            text-align: left;
+            padding: 12px;
+            background: #e9ecef;
+        }
+
+        tbody td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.6s ease, transform 0.3s ease;
+        }
+
+        /* Highlight animation */
+        .row-update {
+            animation: highlight 1.2s ease;
+        }
+        @keyframes highlight {
+            0% { background-color: #d1ffd6; transform: scale(1.01); }
+            100% { background-color: transparent; transform: scale(1); }
+        }
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .rank-result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            thead { display: none; }
+            table, tr, td { display: block; width: 100%; }
+            tr {
+                margin-bottom: 15px;
+                background: #fafafa;
+                padding: 10px;
+                border-radius: 8px;
+            }
+            td {
+                border: none;
+                padding: 6px;
+                display: flex;
+                justify-content: space-between;
+            }
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <h1 class="title">🏆 Gaming Leaderboard</h1>
+
+    <!-- Submit Score -->
+    <div class="card">
+        <h2>Submit Score</h2>
+
+        <div class="input-row">
+            <input type="number" id="submitUserId" placeholder="User ID">
+            <input type="number" id="submitScore" placeholder="Score">
+            <button onclick="submitScore()">Submit</button>
+        </div>
+
+        <p id="submitMsg" class="rank-result"></p>
+    </div>
+
+    <!-- Leaderboard Table -->
+    <div class="card">
+        <table>
+            <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+            <tbody id="leaderboardBody">
+            <tr><td colspan="3" style="text-align:center;">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Player Rank Search -->
+    <div class="card">
+        <h2>Search Player Rank</h2>
+
+        <div class="input-row">
+            <input type="number" id="userIdInput" placeholder="Enter User ID">
+            <button onclick="fetchPlayerRank()">Search</button>
+        </div>
+
+        <p id="rankResult" class="rank-result"></p>
+    </div>
+
+</div>
+
+<script>
+    const API = "http://localhost:8080/api/leaderboard";
+    let previousData = [];
+
+    function rowChanged(oldRow, newRow) {
+        if (!oldRow) return true;
+        return oldRow[2] !== newRow[2] || oldRow[3] !== newRow[3];
+    }
+
+    async function fetchLeaderboard() {
+        try {
+            const res = await fetch(`${API}/top`);
+            const data = await res.json();
+            renderLeaderboard(data);
+            previousData = data;
+        } catch (err) {
+            console.error("Leaderboard fetch failed:", err);
+        }
+    }
+
+    function renderLeaderboard(data) {
+        const body = document.getElementById("leaderboardBody");
+        body.innerHTML = "";
+
+        data.forEach((row, index) => {
+            const [userId, username, score, rank] = row;
+
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+            <td data-label="Rank">${rank}</td>
+            <td data-label="Username">${username}</td>
+            <td data-label="Score">${score}</td>
+        `;
+
+            if (previousData[index] && rowChanged(previousData[index], row)) {
+                tr.classList.add("row-update");
+            }
+
+            body.appendChild(tr);
+        });
+    }
+
+    setInterval(fetchLeaderboard, 3000);
+    fetchLeaderboard();
+
+    async function fetchPlayerRank() {
+        const userId = document.getElementById("userIdInput").value;
+        if (!userId) return;
+
+        try {
+            const res = await fetch(`${API}/rank/${userId}`);
+            const data = await res.json();
+
+            document.getElementById("rankResult").innerText =
+                `Rank: ${data.rank}`;
+        } catch (err) {
+            document.getElementById("rankResult").innerText =
+                "Error fetching rank.";
+        }
+    }
+
+    async function submitScore() {
+        const userId = document.getElementById("submitUserId").value;
+        const score = document.getElementById("submitScore").value;
+
+        if (!userId || !score) return;
+
+        try {
+            const res = await fetch(`${API}/submit?userId=${userId}&score=${score}`, {
+                method: "POST"
+            });
+            const msg = await res.text();
+
+            document.getElementById("submitMsg").innerText = msg;
+
+
+            fetchLeaderboard();
+        } catch (err) {
+            document.getElementById("submitMsg").innerText = "Error submitting score.";
+        }
+    }
+</script>
+
+</body>
+</html>
